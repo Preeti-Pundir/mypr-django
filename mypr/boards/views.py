@@ -1,11 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
-'''from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse('Hello, preeti welcome back!')'''
-
 from django.http import HttpResponse
 from .models import Board
 from django.http import Http404
@@ -27,10 +19,6 @@ def home(request):
         return render(request, 'topics.html', {'board': board})'''
 
 
-
-
-
-
 def board_topics(request, pk):
     try:
         board = Board.objects.get(pk=pk)
@@ -39,6 +27,10 @@ def board_topics(request, pk):
     return render(request, 'topics.html', {'board': board})
 
 def new_topic(request, pk):
-        board = get_object_or_404(Board, pk=pk)
-        return render(request, 'new_topic.html', {'board': board})
- 
+    board = get_object_or_404(Board, pk=pk)
+    return render(request, 'new_topic.html', {'board': board})
+
+from django.shortcuts import render
+def signup(request):
+    return render(request, 'signup.html')
+    #return HttpResponse("apple")

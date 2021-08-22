@@ -1,8 +1,15 @@
 from django.urls import reverse
 from django.urls import resolve
 from django.test import TestCase
-from .views import home, board_topics
-from .models import Board
+#from .views import home, board_topics,view
+#from .models import Board
+from . import home, board_topics,view
+from . import Board , models
+
+from . import home, board_topics, new_topic ,view
+from . import Board, Topic, Post, models
+from . import NewTopicForm, forms 
+
 
 class HomeTests(TestCase):
     def test_home_view_status_code(self):

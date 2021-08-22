@@ -24,6 +24,8 @@ SECRET_KEY = 'django-insecure-*mzk6-(#de17!8xjyhd129n#g6vwf6s$uc%)b*#+(y8%%u*2w!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
+#ALLOWED_HOSTS = [True]
 
 ALLOWED_HOSTS = []
 
@@ -38,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'boards',
-    
-    'widget_tweaks',
-
     'accounts',
+    
+     #'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
@@ -61,7 +63,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
                   os.path.join(BASE_DIR, 'templates')
-        ],
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,3 +136,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
